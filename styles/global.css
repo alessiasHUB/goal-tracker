@@ -103,7 +103,7 @@ header {
   }
 }
 /* ------------FOOTER----------- */
-.footer-contact-container {
+.footer-container {
   display: flex;
   justify-content: space-around;
   background-color: rgb(31, 31, 31);
@@ -123,28 +123,69 @@ header {
 .footer-links {
   margin: 15px 0px;
 }
+
 .linkedin-icon {
   height: 40px;
   color: white;
   margin: 0px 10px;
 }
+.linkedin-icon:hover {
+  color: rgb(22, 112, 202);
+}
+
 .github-icon {
   height: 40px;
   color: white;
   margin: 0px 10px;
 }
+.github-icon:hover {
+  color: rgb(155, 31, 31);
+}
+
 .envelope-icon {
   height: 40px;
   color: white;
   margin: 0px 10px;
 }
-
-.linkedin-icon:hover {
-  color: rgb(22, 112, 202);
-}
-.github-icon:hover {
-  color: rgb(155, 31, 31);
-}
 .envelope-icon:hover {
   color: rgb(10, 164, 59);
+}
+
+@media (max-width: 655px) {
+  .footer-container {
+    justify-content: center;
+    align-items: center;
+    padding: 7px 0;
+  }
+
+  .footer-txt {
+    margin: 0 15px 0 30px;
+    font-size: 12.5px;
+    max-width: 350px;
+  }
+
+  .footer-links {
+    margin: 0 30px 0 15px;
+  }
+
+  .linkedin-icon {
+    height: 30px;
+    margin: 0 5px;
+  }
+  .github-icon {
+    height: 30px;
+    margin: 0 5px;
+  }
+  .envelope-icon {
+    height: 30px;
+    margin: 0 5px;
+  }
+}
+
+@media (max-width: 555px) {
+  .footer-txt {
+    margin: 0 15px 0 30px;
+    font-size: 12.5px;
+    max-width: 233.5px;
+  }
 }

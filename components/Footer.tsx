@@ -4,10 +4,10 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => (
-  <div className="footer-contact-container">
+  <div className="footer-container">
     <p className="footer-txt">
       If you have any questions about anything, or just want to say hi, feel
-      free to contact me. You can find my social pages and email here →
+      free to contact me. You'll find my social pages and email here →
     </p>
     <div className="footer-links">
       <a href="https://www.linkedin.com/in/alessiaborys/">
