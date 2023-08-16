@@ -1,14 +1,14 @@
-import Link from 'next/link'
-import Layout from '../components/Layout'
-
-const AboutPage = () => (
-  <Layout title="About | Next.js + TypeScript Example">
-    <h1>About</h1>
-    <p>This is the about page</p>
+const AboutPage: React.FC = () => (
+  <div className="about-page-container">
+    <h1>About this app</h1>
     <p>
-      <Link href="/">Go home</Link>
+      This app was made with NextJS, typescript and is my first project with
+      webscraping. For the webscraping I used jsdom to get data from{" "}
+      <a href="https://www.npmjs.com/" className="about-link">
+        npmjs.com
+      </a>
     </p>
-  </Layout>
-)
+  </div>
+);
 
-export default AboutPage
+export default AboutPage;
