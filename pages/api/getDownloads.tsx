@@ -8,8 +8,6 @@ const getDownloads = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = JSON.parse(req.body);
   const { input } = body;
 
-  console.log("input", input);
-
   const response = await fetch(
     `https://www.npmjs.com/package/${input.toLowerCase()}`
   );
@@ -19,8 +17,6 @@ const getDownloads = async (req: NextApiRequest, res: NextApiResponse) => {
   const dom = new JSDOM(html);
   const document = dom.window.document;
   const downloads = document.querySelector("._9ba9a726")?.textContent;
-
-  console.log("downloads", downloads);
 
   //Send downloads back to client
   res.status(200).json({ downloads });
