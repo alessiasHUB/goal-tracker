@@ -5,7 +5,13 @@ const Home: React.FC = () => {
   const [input, setInput] = useState<string>("");
 
   const getDownloads = async () => {
-    const res = await fetch("http://localhost:3000/api/getDownloads", {
+    // DEPLOYED
+    const baseUrl = "https://package-downloads-webscraper.vercel.app/";
+
+    // LOCAL:
+    // const baseUrl = "http://localhost:3000";
+
+    const res = await fetch(`${baseUrl}/api/getDownloads`, {
       method: "POST",
       body: JSON.stringify({ input }),
     });
