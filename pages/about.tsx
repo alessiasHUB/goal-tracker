@@ -14,7 +14,7 @@ const AboutPage: React.FC = () => (
       <p>
         Other than that I had fun playing around with routes to add an about
         page as well as some fun css animations, as well as improving
-        accessibilty by using rem and the 62.5% trick.
+        accessibilty by using REM and the 62.5% trick.
       </p>
     </div>
   </div>
