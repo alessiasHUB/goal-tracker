@@ -1,10 +1,15 @@
+html {
+  /* 62.5% of 16px browser font size is 10px */
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
   height: 100vh;
+  animation: gradient 15s ease infinite;
 }
 
 @keyframes gradient {
@@ -27,66 +32,224 @@ header {
 }
 
 .home-icon {
-  height: 20px;
+  height: 2rem;
   color: white;
   margin: 20px 0px;
 }
+.home-icon:hover {
+  color: rgb(252, 58, 138);
+}
 
 .info-icon {
-  height: 20px;
+  height: 2rem;
   color: white;
   margin: 20px 20px;
 }
+.info-icon:hover {
+  color: aqua;
+}
 
 /* ------------HOME----------- */
-.input-container {
+.main-page {
   position: fixed;
-  top: 48%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.input-box {
+.book-icon {
+  color: white;
+  height: 110px;
+  margin-bottom: 40px;
+  border-radius: 50%;
+}
+.book-icon-loading {
+  color: rgb(255, 255, 255);
+  height: 11rem;
+  margin-bottom: 40px;
+  border-radius: 50%;
+  animation: fill 5s linear infinite;
+}
+@keyframes fill {
+  0% {
+    background-color: #ff9e80;
+  }
+  25% {
+    background-color: #ff8ab7;
+  }
+  50% {
+    background-color: #96e3ff;
+  }
+  100% {
+    background-color: #89ffe3;
+  }
+}
+
+.interactive-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-year {
+  position: relative;
+  display: flex;
+}
+
+.year-tooltip {
+  z-index: 1;
+  position: absolute;
+  font-size: 1.2rem;
+  margin-top: -20px;
+}
+
+.input-year-box {
   color: #333;
-  font-size: 20px;
+  font-size: 1.6rem;
   padding: 15px 20px;
   border-radius: 10px;
   background-color: rgb(255, 255, 255);
   border: none;
+  width: 14rem;
+  margin-bottom: 12px;
+  z-index: 0;
 }
 
-.main-button {
-  height: 54px;
-  width: 54px;
-  font-size: 20px;
+.dropdown {
+  color: #565555;
+  font-size: 1.6rem;
+  padding: 15px 20px;
+  border-radius: 10px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  width: 18rem;
+}
+
+.main-button-disabled {
+  height: 8rem;
+  width: 8rem;
   margin-left: 12px;
   border: none;
   border-radius: 10px;
+  color: rgb(255, 255, 255);
+  font-size: 2.6rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
 }
 
-.downloads-txt {
-  color: white;
+.main-button {
+  height: 8rem;
+  width: 8rem;
+  margin-left: 12px;
+  border: none;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.532);
+  font-size: 2.6rem;
+  font-weight: 100;
+  overflow: hidden;
+  position: relative;
+  text-decoration: none;
+  transition: 0.2s transform ease-in-out;
+  will-change: transform;
+  z-index: 0;
+}
+.main-button::after {
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translate(-100%, 0) rotate(10deg);
+  transform-origin: top left;
+  transition: 0.2s transform ease-out;
+  will-change: transform;
+  z-index: -1;
+}
+.main-button:hover::after {
+  transform: translate(0, 0);
+}
+.main-button:hover {
+  border: 2px solid transparent color rgb(157, 189, 255);
+  transform: scale(1.05);
+  will-change: transform;
+}
+
+.result-container {
   position: fixed;
-  top: 52%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding: 35px 0;
+  border-radius: 5px;
+  background: linear-gradient(-45deg, #00000050, #000000);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  width: 50rem;
+}
+
+.result-txt-1 {
+  color: rgb(239, 227, 227);
+  font-size: 1.8rem;
+  margin: 0;
+}
+.result-txt-2 {
+  font-size: 2rem;
+  color: white;
+  margin: 20px 0 30px 0;
+}
+
+.close-button {
+  height: 3.2rem;
+  font-size: 1.6rem;
+  border: none;
+  border-radius: 7px;
 }
 
 /* ------------ABOUT----------- */
 .about-page-container {
   position: fixed;
-  top: 48%;
+  top: 46%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: black;
+}
+
+.about-title:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #000000);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-gradient 10s ease infinite;
+}
+
+.about-txt {
+  font-size: 1.8rem;
+  max-width: 50rem;
 }
 
 .about-link {
   color: black;
 }
 .about-link:hover {
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #000000);
   background-size: 400% 400%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -102,6 +265,7 @@ header {
     background-position: 100% 50%;
   }
 }
+
 /* ------------FOOTER----------- */
 .footer-container {
   display: flex;
@@ -114,9 +278,30 @@ header {
 }
 
 .footer-txt {
-  max-width: 455px;
+  font-size: 1.4rem;
+  max-width: 45.5rem;
   margin: 15px 0px;
   color: white;
+}
+
+.footer-txt:hover {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: text-gradient 15s ease infinite;
+}
+@keyframes text-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 /*icons*/
@@ -125,7 +310,7 @@ header {
 }
 
 .linkedin-icon {
-  height: 40px;
+  height: 4rem;
   color: white;
   margin: 0px 10px;
 }
@@ -134,7 +319,7 @@ header {
 }
 
 .github-icon {
-  height: 40px;
+  height: 4rem;
   color: white;
   margin: 0px 10px;
 }
@@ -143,7 +328,7 @@ header {
 }
 
 .envelope-icon {
-  height: 40px;
+  height: 4rem;
   color: white;
   margin: 0px 10px;
 }
@@ -160,8 +345,8 @@ header {
 
   .footer-txt {
     margin: 0 15px 0 30px;
-    font-size: 12.5px;
-    max-width: 350px;
+    font-size: 1.25rem;
+    max-width: 35rem;
   }
 
   .footer-links {
@@ -169,15 +354,15 @@ header {
   }
 
   .linkedin-icon {
-    height: 30px;
+    height: 3rem;
     margin: 0 5px;
   }
   .github-icon {
-    height: 30px;
+    height: 3rem;
     margin: 0 5px;
   }
   .envelope-icon {
-    height: 30px;
+    height: 3rem;
     margin: 0 5px;
   }
 }
@@ -185,7 +370,7 @@ header {
 @media (max-width: 555px) {
   .footer-txt {
     margin: 0 15px 0 30px;
-    font-size: 12.5px;
-    max-width: 233.5px;
+    font-size: 1.25rem;
+    max-width: 23.35rem;
   }
 }
