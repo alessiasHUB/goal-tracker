@@ -1,23 +1,15 @@
 import { useState } from "react";
 
 const Home: React.FC = () => {
-  const [downloads, setDownloads] = useState<string>("");
+  // const [downloads, setDownloads] = useState<string>("");
   const [input, setInput] = useState<string>("");
 
-  const getDownloads = async () => {
-    const deployed = true; //true if deployed
-    const baseUrl = deployed
-      ? "https://package-downloads-webscraper.vercel.app/"
-      : "http://localhost:3000";
+  // const deployed = false;
+  // const baseUrl = deployed
+  //   ? "https://goal-tracker.vercel.app/"
+  //   : "http://localhost:3000";
 
-    const res = await fetch(`${baseUrl}/api/getDownloads`, {
-      method: "POST",
-      body: JSON.stringify({ input }),
-    });
-    const { downloads } = await res.json();
-    setDownloads(downloads);
-  };
-
+  //conditionally render home screen if you're logged in or not
   return (
     <>
       <div className="input-container">
@@ -29,7 +21,7 @@ const Home: React.FC = () => {
           placeholder="enter package name"
         />
         {input.length > 0 ? (
-          <button className="main-button" onClick={getDownloads} type="button">
+          <button className="main-button" type="button">
             ✨
           </button>
         ) : (
@@ -38,7 +30,7 @@ const Home: React.FC = () => {
           </button>
         )}
       </div>
-      {downloads && <p className="downloads-txt">downloads: {downloads}</p>}
+      {/* {downloads && <p className="downloads-txt">downloads: {downloads}</p>} */}
     </>
   );
 };
