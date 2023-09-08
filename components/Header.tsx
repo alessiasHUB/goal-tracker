@@ -17,9 +17,7 @@ const Header: React.FC = () => {
   return (
     <header>
       <nav>
-        <button onClick={handleLogIn}>
-          {loggedIn ? "log out" : "log in"}button
-        </button>
+        <button onClick={handleLogIn}>{loggedIn ? "log out" : "log in"}</button>
         <Link href="/">
           <FontAwesomeIcon icon={faHouse} className="home-icon" />
         </Link>
